@@ -38,12 +38,12 @@ void display_timer(int minutesToWork, char* mesg)
 	char* message = mesg;
 
 	mvprintw(2, 0, "%d minutes to %s now.\n",
-		minutes, (minutes == work ?
-		          "work" : (minutes == big_rest ?
-			            "take a big rest" :
-				    "take a little rest")));
+		        minutes,      (minutes == work ?
+		                       "work" : (minutes == big_rest ?
+			                         "take a big rest" :
+				                 "take a little rest")));
 
-	while (!(minutes < 0) && !(seconds < 0)) {
+	while (minutes >= 0 || seconds >= 0) {
 
 		/* Displays the timer */
 		mvprintw(5, 5, "\t%02d:%02d \t%s\n\n\n",
