@@ -89,10 +89,16 @@ void pomodoro(void)
 	    restMinutes = rest,
 	    specialRestMinutes = big_rest,
 	    number = 0;
+	char *messageToWork = "go";
+	char *messageToRest = "rest";
+	char *messageToBigRest = "big";
+	char input[10];
+	/*
 	char messageToWork[]    = " It will be valuable for the glory of God.",
 	     messageToRest[]    = " Be peace in God.",
 	     messageToBigRest[] = " Have a Big resting.",
 	     input[10];
+	*/
 
 	/* Ncurses starts here. */
 	initscr();
@@ -107,19 +113,19 @@ void pomodoro(void)
 		getstr(input);
 
 		/* for working for work min */
-		if (!strcmp(input, "go")) {
+		if (!strcmp(input, messageToWork)) {
 			display_timer(minutes, messageToWork);
 			continue;
 		} 
 
 		/* for resting for rest min */
-		if (!strcmp(input, "rest")) {
+		if (!strcmp(input, messageToRest)) {
 			display_timer(restMinutes, messageToRest);
 			continue;
 		} 
 
 		/* for resting for big_rest min */
-		if (!strcmp(input, "big")) {
+		if (!strcmp(input, messageToBigRest)) {
 			display_timer(specialRestMinutes, messageToBigRest); 
 			continue;
 		} 
