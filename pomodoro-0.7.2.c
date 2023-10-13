@@ -142,5 +142,6 @@ void pomodoro(void)
 int main(int argc, char** argv)
 {
 	pomodoro();
+
 	return 0;
 }
