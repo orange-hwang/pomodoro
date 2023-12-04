@@ -24,7 +24,7 @@
 //#ifndef debugging
 enum { work = 25, rest = 5, big_rest = 30, quit = 0 };
 //#else
-//enum { work = 1, rest = 1, big_rest = 1 };
+//enum { work = 1, rest = 1, big_rest = 1 }; // for test
 //#endif
 
 #define blink(n)	beep(), flash(), napms(n)
