@@ -51,7 +51,7 @@ void display_timer(int minutesToWork, char* mesg)
 		refresh();
 
 		/* When the timer ends, goto the stop to finish it. */
-		if (minutes == 0 && seconds == 0)
+		if (seconds == 0 && minutes == 0)
 			goto stop;
 
 		/* delay 1 second */
