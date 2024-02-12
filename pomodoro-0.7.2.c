@@ -61,11 +61,7 @@ void display_timer(int minutesToWork, char* mesg)
 		/* 4 Debugging */
 		if (seconds < 0) {
 			--minutes;
-			//#ifndef debugging
 			seconds = 59;
-			//#else
-			//seconds = 2;
-			//#endif
 		}
 	}
 
@@ -112,26 +108,13 @@ void pomodoro(void)
 		refresh();
 		getstr(input);
 
-		/* for working for work min */
-		if (!strcmp(input, messageToWork)) {
+		if (!strcmp(input, messageToWork))	/* for working for work min */
 			display_timer(minutes, messageToWork);
-			continue;
-		} 
-
-		/* for resting for rest min */
-		if (!strcmp(input, messageToRest)) {
+		else if (!strcmp(input, messageToRest))	/* for resting for rest min */
 			display_timer(restMinutes, messageToRest);
-			continue;
-		} 
-
-		/* for resting for big_rest min */
-		if (!strcmp(input, messageToBigRest)) {
+		else if (!strcmp(input, messageToBigRest))	/* for resting for big_rest min */
 			display_timer(specialRestMinutes, messageToBigRest); 
-			continue;
-		} 
-
-		/* quit */
-		if (!strcmp(input, "quit"))
+		else if (!strcmp(input, "quit")) /* quit */
 			break;
 	}
 
