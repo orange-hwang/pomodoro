@@ -81,10 +81,10 @@ stop:
  */
 void pomodoro(void)
 {
-	int minutes = work,
-	    restMinutes = rest,
-	    specialRestMinutes = big_rest,
-	    number = 0;
+	int minutes = work;
+	int restMinutes = rest,
+	int specialRestMinutes = big_rest,
+	int number = 0;
 	char *messageToWork = "go";
 	char *messageToRest = "rest";
 	char *messageToBigRest = "big";
